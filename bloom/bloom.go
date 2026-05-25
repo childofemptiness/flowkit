@@ -2,9 +2,10 @@ package bloom
 
 import (
 	"errors"
-	"flowkit/internal/bitset"
 	"hash/maphash"
 	"math"
+
+	"github.com/childofemptiness/flowkit/internal/bitset"
 )
 
 var (

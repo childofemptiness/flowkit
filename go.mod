@@ -1,4 +1,4 @@
-module flowkit
+module github.com/childofemptiness/flowkit
 
 go 1.25
 
