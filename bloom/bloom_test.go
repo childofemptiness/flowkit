@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestFilter_New(t *testing.T) {
+func TestNew(t *testing.T) {
 	tests := []struct {
 		name              string
 		expectedItems     uint64
@@ -46,13 +46,13 @@ func TestFilter_New(t *testing.T) {
 	}
 }
 
-func TestFilter_EmptyFilterDoesNotContainItem(t *testing.T) {
+func TestEmptyFilterDoesNotContainItem(t *testing.T) {
 	f := newSampleFilter(t, 100, 0.1)
 
 	require.False(t, f.MightContain([]byte("hello")))
 }
 
-func TestFilter_AddedItemMightBeContained(t *testing.T) {
+func TestAddedItemMightBeContained(t *testing.T) {
 	f := newSampleFilter(t, 100, 0.1)
 
 	data := []byte("hello")
@@ -61,7 +61,7 @@ func TestFilter_AddedItemMightBeContained(t *testing.T) {
 	require.True(t, f.MightContain(data))
 }
 
-func TestFilter_MultipleItemsHaveNoFalseNegatives(t *testing.T) {
+func TestMultipleItemsHaveNoFalseNegatives(t *testing.T) {
 	itemsCount := 1000
 	f := newSampleFilter(t, uint64(itemsCount), 0.1)
 
@@ -77,7 +77,7 @@ func TestFilter_MultipleItemsHaveNoFalseNegatives(t *testing.T) {
 	}
 }
 
-func TestFilter_ResetClearsFilter(t *testing.T) {
+func TestResetClearsFilter(t *testing.T) {
 	f := newSampleFilter(t, 100, 0.1)
 
 	data := []byte("hello")
