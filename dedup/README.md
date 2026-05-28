@@ -46,10 +46,11 @@ func main() {
 	fmt.Println(d.SeenOrAdd(data)) // false
 	fmt.Println(d.SeenOrAdd(data)) // true
 
-	d.RotateIfNeeded(now.Add(window))
+	fmt.Println(d.RotateIfNeeded(now)) // false
+	fmt.Println(d.RotateIfNeeded(now.Add(window))) // true
 	fmt.Println(d.Seen(data)) // true
 	
-	d.RotateIfNeeded(now.Add(2 * window))
+	fmt.Println(d.RotateIfNeeded(now.Add(2 * window))) // true
 	fmt.Println(d.Seen(data)) // false
 	
 	d.Add(data)
